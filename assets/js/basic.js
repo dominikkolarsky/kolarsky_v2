@@ -1,8 +1,7 @@
 // Hamburger menu selections
 const hamburger = document.querySelector("#hamburger");
 const navMenu = document.querySelector("#navMenu");
-const navLink = document.querySelectorAll("#nav-link");
-// const header = document.querySelector('#header');
+const navLink = document.querySelectorAll(".nav-link");
 
 // Hamburger menu functionality
 hamburger.addEventListener("click", openMenu);
@@ -11,6 +10,8 @@ function openMenu() {
   hamburger.classList.toggle("active");
   navMenu.classList.toggle("active");
   header.classList.toggle("active");
+  header.style.backgroundColor = 'rgb(31, 32, 41)';
+
 }
 
 // Close menu on nav menu clicks
@@ -20,44 +21,35 @@ function closeMenu() {
   hamburger.classList.remove("active");
   navMenu.classList.remove("active");
   header.classList.remove("active");
+  header.style.backgroundColor = 'unset';
 }
 
+// flip card
+const otherCard = document.querySelectorAll('.card');
+function flipCard(card) {
+  otherCard.forEach((c) => {
+    if (c.classList == 'card is-flipped' || c.classList == 'card more is-flipped') {
+      c.classList.remove('is-flipped')
+    }
+  });
 
-/* When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar */
-// let prevScrollpos = window.pageYOffset;
+  card.classList.toggle('is-flipped');
+}
 
-// window.onscroll = function() {
-//   let currentScrollPos = window.pageYOffset;
-//   if (prevScrollpos > currentScrollPos) {
-//     document.getElementById("header").style.top = "0";
-//   } else {
-//     document.getElementById("header").style.top = "-70px";
-//   }
-//   prevScrollpos = currentScrollPos;
-// }
+// show more cards
+const showMoreBtn = document.querySelector('#moreCard-btn');
+const moreCards = document.querySelectorAll('.more');
+const showMore__text = document.querySelector('.showMore__text');
+showMoreBtn.addEventListener("click", showMoreCards);
 
-// scroll-to-top selection
-// const scrollUp = document.querySelector("#scroll-up");
-
-// scroll to top functionality
-// scrollUp.addEventListener("click", () => {
-//   window.scrollTo({
-//     top: 0,
-//     left: 0,
-//     behavior: "smooth",
-//   });
-// });
-
-
-// Theme switcher selection
-// const checkbox = document.querySelector("#checkbox");
-
-// Theme switcher functionality
-// checkbox.addEventListener("change", () => {
-// Toggle website theme
-//   document.body.classList.toggle("dark");
-// });
-
+function showMoreCards() {
+  moreCards.forEach((x) => x.classList.toggle("more-hide"));
+  if (showMoreBtn.checked) {
+    showMore__text.innerHTML = "View less projects"
+  } else {
+    showMore__text.innerHTML = "View more projects"
+  }
+}
 
 
 // swicher skills
@@ -73,4 +65,27 @@ function switchTab() {
     others.style.display = 'none';
     favourites.style.display = 'flex';
   }
+}
+
+//Get the button:
+const mybutton = document.querySelector("#scrollUp");
+const header = document.querySelector('#header');
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function () { scrollFunction() };
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = 'block';
+    header.style.backgroundColor = 'rgba(0,0,0, 0.1)';
+  } else {
+    mybutton.style.display = 'none';
+    header.style.backgroundColor = 'unset';
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }

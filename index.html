@@ -16,6 +16,7 @@
 </head>
 
 <body>
+
     <!-- navbar -->
     <header id="header">
         <nav id="navbar" class="">
@@ -24,11 +25,11 @@
 
             <!-- links -->
             <ul id="navMenu">
-                <li class="nav-item"><a href="#portfolio" class="nav-link" id="nav-link">portfolio</a></li>
-                <li class="nav-item"><a href="#about" class="nav-link" id="nav-link">about</a></li>
+                <li class="nav-item"><a href="#portfolio" class="nav-link">portfolio</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link">about</a></li>
                 <!-- <li class="nav-item"><a href="#skills" class="nav-link" id="nav-link">skills</a></li> -->
-                <li class="nav-item"><a href="#contact" class="nav-link" id="nav-link">contact</a></li>
-                <li class="nav-item"><a href="/assets/KOLARSKY-CV-EN-2022.pdf" target="_blank" class="nav-link resume" id="nav-link">resume</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link">contact</a></li>
+                <li class="nav-item"><a href="/assets/KOLARSKY-CV-EN-2022.pdf" target="_blank" class="nav-link resume">resume</a></li>
             </ul>
 
             <!-- Bars -->
@@ -41,7 +42,7 @@
     </header>
 
     <!-- welcome -->
-    <section id="welcome" class="">
+    <section id="welcome">
         <div class="grid">
             <!-- welcome text -->
             <div class="welcome-text grid">
@@ -60,28 +61,70 @@
     </section>
 
     <!-- divider -->
-    <div class="divider-top">
+    <div class="divider-top light-shadow">
         <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
             <path d="M0,0V7.23C0,65.52,268.63,112.77,600,112.77S1200,65.52,1200,7.23V0Z" class="shape-fill"></path>
         </svg>
     </div>
 
     <!-- portfolio -->
-    <section id="portfolio">
+    <section id="portfolio" class="flex-col">
         <h3>Projects</h3>
         <p>Some of my recent work that I've done in various programming languages.</p>
-        <ul class="grid">
-            <li>
-                <img src="" alt="">a
+        <ul class="projects">
+            <li class="card" onclick="flipCard(this)">
+                <div class="card__face card__face--front">
+                    front
+                </div>
+                <div class="card__face card__face--back">
+                    back
+                </div>
             </li>
-            <li>
-                <img src="" alt="">b
+            <li class="card"  onclick="flipCard(this)">
+                <div class="card__face card__face--front">
+                    front
+                </div>
+                <div class="card__face card__face--back">
+                    back
+                </div>
             </li>
-            <li>
-                <img src="" alt="">c
+            <li class="card"  onclick="flipCard(this)">
+                <div class="card__face card__face--front">
+                    front
+                </div>
+                <div class="card__face card__face--back">
+                    back
+                </div>
+            </li>
+            <li class="card more more-hide"  onclick="flipCard(this)">
+                <div class="card__face card__face--front">
+                    front
+                </div>
+                <div class="card__face card__face--back">
+                    back
+                </div>
+            </li>
+            <li class="card more more-hide"  onclick="flipCard(this)">
+                <div class="card__face card__face--front">
+                    front
+                </div>
+                <div class="card__face card__face--back">
+                    back
+                </div>
+            </li>
+            <li class="card more more-hide"  onclick="flipCard(this)">
+                <div class="card__face card__face--front">
+                    front
+                </div>
+                <div class="card__face card__face--back">
+                    back
+                </div>
             </li>
         </ul>
-        <p>View more projects</p>
+        <label class="showMore">
+            <input type="checkbox" id="moreCard-btn">
+            <span class="showMore__text">View more projects</span>
+        </label>
     </section>
 
     <!-- about -->
@@ -90,7 +133,7 @@
         <div class="grid">
             <!-- img -->
             <div class="about-img">
-                <img src="assets/img/vektor_dk.png" alt="">
+                <img src="assets/img/vektor_dk.png" alt="photo" class="light-shadow">
             </div>
             <!-- main text -->
             <div class="about-text">
@@ -120,21 +163,22 @@
         <h3>Skills &amp; Tools</h3>
         <p>Here is my set of weapons I use to make things happen. Not all are mentioned as I am learning something new every day and I am also an&nbsp;ex&#8209;developer in the engineering industry and . Proficiency ranges from excellent to absolutely awful.</p>
 
-   
-
         <!-- Rounded switch -->
         <label class="switch">
             <input type="checkbox" id="skillsCheck" onclick="switchTab()">
-            <span class="slider round"></span>
+            <span class="slider">
+                <span class="slider-text">Favourites</span>
+                <span class="slider-text">Others</span>
+            </span>
         </label>
 
         <!-- tabcontent Favorites -->
         <div id="favourites" class="tabcontent" style="display:flex">
             <!-- react -->
             <li class=" item">
-            <img src="assets/icons/react-original.svg" alt="React">
-            <h5>React</h5>
-            <!-- javascript -->
+                <img src="assets/icons/react-original.svg" alt="React">
+                <h5>React</h5>
+                <!-- javascript -->
             <li class="item">
                 <img src="assets/icons/javascript.svg" alt="JavaScript">
                 <h5>JavaScript</h5>
@@ -158,11 +202,6 @@
             <li class="item">
                 <img src="assets/icons/sass-original.svg" alt="Sass">
                 <h5>Sass</h5>
-            </li>
-            <!-- Tailwind -->
-            <li class="item">
-                <img src="assets/icons/tailwindcss-plain.svg" alt="Tailwind">
-                <h5>Tailwind</h5>
             </li>
             <!-- Styled-components -->
             <li class="item">
@@ -222,11 +261,16 @@
                 <img src="assets/icons/bootstrap-original.svg" alt="Bootstrap">
                 <h5>Bootstrap</h5>
             </li>
+            <!-- Tailwind -->
+            <li class="item">
+                <img src="assets/icons/tailwindcss-plain.svg" alt="Tailwind">
+                <h5>Tailwind</h5>
+            </li>
         </div>
     </section>
 
     <!-- divider bottom -->
-    <div class="divider-bottom">
+    <div class="divider-bottom light-shadow2">
         <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
             <path d="M0,0V7.23C0,65.52,268.63,112.77,600,112.77S1200,65.52,1200,7.23V0Z" class="shape-fill"></path>
         </svg>
@@ -236,7 +280,7 @@
     <section id="contact">
         <div class="flex-col">
             <h3>Get in Touch</h3>
-            <p class="leading">Don't be shy. Contact me any time, through any method below! <br> Or feel free to just say hi. I like that too.</p>
+            <p>Don't be shy. Contact me any time, through any method below! <br> Or feel free to just say hi. I like that too.</p>
             <form action="" class="grid">
                 <input type="text" placeholder="Name">
                 <input type="text" placeholder="Email">
@@ -244,8 +288,8 @@
                 <button class="button">Send it</button>
 
                 <ul class="personal">
-                    <li>kolarskydominik@gmail.com</li>
-                    <li>+420 606 909 527</li>
+                    <li><a href="mailto:kolarskydominik@gmail.com">kolarskydominik@gmail.com</a></li>
+                    <li><a href="tel:+420606909527">+420 606 909 527</a></li>
                 </ul>
 
                 <ul class="social">
@@ -255,13 +299,20 @@
             </form>
         </div>
     </section>
-    <img src="assets/img/javascript.svg" alt="">
+
     <!-- footer -->
     <footer>
         <p class="copyright">&copy; 2022 Made with <svg class="love" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
             </svg> by Dominik Kolarský</p>
     </footer>
+
+    <!-- go to top button -->
+    <button onclick="topFunction()" id="scrollUp" title="Go to top">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>
+        </svg>
+    </button>
 
     <script src="assets/js/basic.js"></script>
 </body>
