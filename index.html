@@ -5,29 +5,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dominik Kolarsky | Tvorba webových stránek</title>
+    <title>Dominik Kolarsky</title>
 
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/@tabler/icons@latest/iconfont/tabler-icons.min.css">
+
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet" /> -->
 </head>
 
 <body>
 
     <!-- navbar -->
     <header id="header">
-        <nav id="navbar" class="">
+        <nav id="navbar">
             <!-- logo -->
-            <h1><a href="#">Dominik Kolarský</a></h1>
+            <h1><a href="#">Dominik Kolarsky</a></h1>
 
             <!-- links -->
             <ul id="navMenu">
                 <li class="nav-item"><a href="#portfolio" class="nav-link">portfolio</a></li>
                 <li class="nav-item"><a href="#about" class="nav-link">about</a></li>
-                <!-- <li class="nav-item"><a href="#skills" class="nav-link" id="nav-link">skills</a></li> -->
                 <li class="nav-item"><a href="#contact" class="nav-link">contact</a></li>
                 <li class="nav-item"><a href="/assets/KOLARSKY-CV-EN-2022.pdf" target="_blank" class="nav-link resume">resume</a></li>
             </ul>
@@ -44,18 +44,19 @@
     <!-- welcome -->
     <section id="welcome">
         <div class="grid">
-            <!-- welcome text -->
-            <div class="welcome-text grid">
-                <p class="leading">Hi, I'm Dom <img src="assets/icons/hi.png" alt=""></p>
-                <!-- <h2>Full&#8209;stack developer <br>&amp;&nbsp;Problem solver</h2> -->
-                <h2>Web developer <br>&amp;&nbsp;Problem solver</h2>
-                <p class="leading">Vytvořím ti webovou stránku, která bude bavit mě, tebe, i tvé návštěvníky.</p>
-                <a href="#portfolio" class="button">View my work</a>
-                <a href="#about" class="button">More about me</a>
-            </div>
             <!-- welcome img -->
             <div class="welcome-img">
-                <img src="" alt="">
+                <img class="light-shadow" src="/assets/img/vektor_dk.png" alt="autor photo">
+            </div>
+            <!-- welcome text -->
+            <div class="welcome-text grid">
+                <h2>
+                    <span class="name1">DOMINIK</span><br>
+                    <span class="name2">KOLARSKY</span>
+                </h2>
+                <p class="leading">Full&#8209;stack&nbsp;developer&nbsp;/ Full&#8209;time&nbsp;learner&nbsp;/ Googler</p>
+                <p class="leading leading-more">I eat, sleep and breathe JavaScript of every kind.</p>
+                <a href="#contact" class="button btn-leading">Get in touch</a>
             </div>
         </div>
     </section>
@@ -71,56 +72,273 @@
     <section id="portfolio" class="flex-col">
         <h3>Projects</h3>
         <p>Some of my recent work that I've done in various programming languages.</p>
+        <!-- projekty -->
         <ul class="projects">
+            <!-- DB Book App -->
             <li class="card" onclick="flipCard(this)">
-                <div class="card__face card__face--front">
-                    front
+                <!-- predni strana -->
+                <div class="card__face">
+                    <img src="/assets/img/php-book-app.png" alt="">
+                    <span>+</span>
                 </div>
+                <!-- zadni strana -->
                 <div class="card__face card__face--back">
-                    back
+                    <h5>DB Book App</h5>
+                    <p class="card-text">HTML / PHP / MySQL / Sass</p>
+                    <p class="card-text">Project to practice PHP, DB MySQL and custom design.</p>
+                    <!-- linky pryc -->
+                    <ul class="card-text card-links">
+                        <li>
+                            <a href="https://github.com/dominikkolarsky/php-books-app_deploy" target="_blank">
+                                <i class="ti ti-brand-github"></i>
+                                GitHub
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://kolarsky.eu/assets/books_app/index.php" target="_blank">
+                                Visite
+                                <i class="ti ti-external-link"></i>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </li>
-            <li class="card"  onclick="flipCard(this)">
-                <div class="card__face card__face--front">
-                    front
+            <!-- ToDo App -->
+            <li class="card" onclick="flipCard(this)">
+                <!-- predni strana -->
+                <div class="card__face">
+                    <img src="/assets/img/js_todo.png" alt="">
+                    <span>+</span>
                 </div>
+                <!-- zadni strana -->
                 <div class="card__face card__face--back">
-                    back
+                    <h5>ToDo App</h5>
+                    <p class="card-text">JavaScript / HTML / CSS </p>
+                    <p class="card-text">Practicing the basics in pure JavaScript on my personal project.</p>
+                    <!-- linky pryc -->
+                    <ul class="card-text card-links">
+                        <li>
+                            <a href="https://github.com/dominikkolarsky/todo_vanilla_js" target="_blank">
+                                <i class="ti ti-brand-github"></i>
+                                GitHub
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://dominikkolarsky.github.io/todo_vanilla_js/" target="_blank">
+                                Visite
+                                <i class="ti ti-external-link"></i>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </li>
-            <li class="card"  onclick="flipCard(this)">
-                <div class="card__face card__face--front">
-                    front
+            <!-- DB Login App -->
+            <li class="card" onclick="flipCard(this)">
+                <!-- predni strana -->
+                <div class="card__face">
+                    <img src="/assets/img/php-login-app.png" alt="">
+                    <span>+</span>
                 </div>
+                <!-- zadni strana -->
                 <div class="card__face card__face--back">
-                    back
+                    <h5>DB Login App</h5>
+                    <p class="card-text">HTML / PHP / MySQL / Sass</p>
+                    <p class="card-text">An exam (6 hours limit) to test PHP, DB MySQL and custom design.</p>
+                    <!-- linky pryc -->
+                    <ul class="card-text card-links">
+                        <li>
+                            <a href="https://github.com/dominikkolarsky/php-login-app_deploy" target="_blank">
+                                <i class="ti ti-brand-github"></i>
+                                GitHub
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://kolarsky.eu/assets/login_app/index.php" target="_blank">
+                                Visite
+                                <i class="ti ti-external-link"></i>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </li>
-            <li class="card more more-hide"  onclick="flipCard(this)">
-                <div class="card__face card__face--front">
-                    front
+            <!-- Manage Landing Page -->
+            <li class="card more" onclick="flipCard(this)">
+                <!-- predni strana -->
+                <div class="card__face">
+                    <img class="card-img" src="/assets/img/css-manage.png" alt="">
+                    <span>+</span>
                 </div>
+                <!-- zadni strana -->
                 <div class="card__face card__face--back">
-                    back
+                    <h5>Manage Landing Page</h5>
+                    <p class="card-text">Tailwind / JavaScript / HTML</p>
+                    <p class="card-text">Tailwind challenge from www.frontendmentor.io</p>
+                    <!-- linky pryc -->
+                    <ul class="card-text card-links">
+                        <li>
+                            <a href="https://github.com/dominikkolarsky/manage" target="_blank">
+                                <i class="ti ti-brand-github"></i>
+                                GitHub
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://dominikkolarsky.github.io/manage/" target="_blank">
+                                Visite
+                                <i class="ti ti-external-link"></i>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </li>
-            <li class="card more more-hide"  onclick="flipCard(this)">
-                <div class="card__face card__face--front">
-                    front
+            <!-- hiddened cards -->
+            <!-- Order form JS -->
+            <li class="card more more-hide" onclick="flipCard(this)">
+                <!-- predni strana -->
+                <div class="card__face">
+                    <img src="/assets/img/js_form_project.png" alt="">
+                    <span>+</span>
                 </div>
+                <!-- zadni strana -->
                 <div class="card__face card__face--back">
-                    back
+                    <h5>Order form JavaScript</h5>
+                    <p class="card-text">JavaScript / Tailwind / HTML</p>
+                    <p class="card-text">A JavaScript web form exam (3 hours limit) from the OOP course.</p>
+                    <!-- linky pryc -->
+                    <ul class="card-text card-links">
+                        <li>
+                            <a href="https://github.com/dominikkolarsky/js-first-form-zverimex" target="_blank">
+                                <i class="ti ti-brand-github"></i>
+                                GitHub
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://dominikkolarsky.github.io/js-first-form-zverimex/" target="_blank">
+                                Visite
+                                <i class="ti ti-external-link"></i>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </li>
-            <li class="card more more-hide"  onclick="flipCard(this)">
-                <div class="card__face card__face--front">
-                    front
+
+            <!-- Kolarsky v1 -->
+            <li class="card more more-hide" onclick="flipCard(this)">
+                <!-- predni strana -->
+                <div class="card__face">
+                    <img class="card-img" src="/assets/img/tailwind-kolarsky.png" alt="">
+                    <span>+</span>
                 </div>
+                <!-- zadni strana -->
                 <div class="card__face card__face--back">
-                    back
+                    <h5>My personal web v1</h5>
+                    <p class="card-text">Tailwind / JavaScript / HTML / CSS</p>
+                    <p class="card-text">My previous website.</p>
+                    <!-- linky pryc -->
+                    <ul class="card-text card-links">
+                        <li>
+                            <a href="https://github.com/dominikkolarsky/final_kolarsky_eu" target="_blank">
+                                <i class="ti ti-brand-github"></i>
+                                GitHub
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://dominikkolarsky.github.io/final_kolarsky_eu/" target="_blank">
+                                Visite
+                                <i class="ti ti-external-link"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <!-- Order form React -->
+            <li class="card more more-hide" onclick="flipCard(this)">
+                <!-- predni strana -->
+                <div class="card__face">
+                    <img class="card-img" src="/assets/img/react-kolosalon.png" alt="">
+                    <span>+</span>
+                </div>
+                <!-- zadni strana -->
+                <div class="card__face card__face--back">
+                    <h5>Order form React</h5>
+                    <p class="card-text">React / JavaScript / HTML / Styled-components</p>
+                    <p class="card-text">The React web form exam (4 hours limit).</p>
+                    <!-- linky pryc -->
+                    <ul class="card-text card-links">
+                        <li>
+                            <a href="https://github.com/dominikkolarsky/app-react-cviko" target="_blank">
+                                <i class="ti ti-brand-github"></i>
+                                GitHub
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://dominikkolarsky.github.io/app-react-cviko/" target="_blank">
+                                Visite
+                                <i class="ti ti-external-link"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <!-- Malakai Paradise -->
+            <li class="card more more-hide" onclick="flipCard(this)">
+                <!-- predni strana -->
+                <div class="card__face">
+                    <img class="card-img" src="/assets/img/bootstrap-malakai.png" alt="">
+                    <span>+</span>
+                </div>
+                <!-- zadni strana -->
+                <div class="card__face card__face--back">
+                    <h5>Malakai Paradise</h5>
+                    <p class="card-text">Bootstrap / JavaScript / HTML / CSS</p>
+                    <p class="card-text">An exam (6 hours limit) to practice Bootstrap and custom design.</p>
+                    <!-- linky pryc -->
+                    <ul class="card-text card-links">
+                        <li>
+                            <a href="https://github.com/dominikkolarsky/BS_final_project_hotel" target="_blank">
+                                <i class="ti ti-brand-github"></i>
+                                GitHub
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://dominikkolarsky.github.io/BS_final_project_hotel/" target="_blank">
+                                Visite
+                                <i class="ti ti-external-link"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <!-- Avio Salon -->
+            <li class="card more more-hide" onclick="flipCard(this)">
+                <!-- predni strana -->
+                <div class="card__face">
+                    <img class="card-img" src="/assets/img/css-aviosalon.png" alt="">
+                    <span>+</span>
+                </div>
+                <!-- zadni strana -->
+                <div class="card__face card__face--back">
+                    <h5>Avio Salon</h5>
+                    <p class="card-text">HTML / CSS</p>
+                    <p class="card-text">My very first website. The first exam (7 hours limit) website from the OOP course using pure HTML and CSS.</p>
+                    <!-- linky pryc -->
+                    <ul class="card-text card-links">
+                        <li>
+                            <a href="https://github.com/dominikkolarsky/aviosalon" target="_blank">
+                                <i class="ti ti-brand-github"></i>
+                                GitHub
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://dominikkolarsky.github.io/aviosalon/" target="_blank">
+                                Visite
+                                <i class="ti ti-external-link"></i>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </li>
         </ul>
+        <!-- showMore projectu -->
         <label class="showMore">
             <input type="checkbox" id="moreCard-btn">
             <span class="showMore__text">View more projects</span>
@@ -131,10 +349,6 @@
     <section id="about">
         <h3>About</h3>
         <div class="grid">
-            <!-- img -->
-            <div class="about-img">
-                <img src="assets/img/vektor_dk.png" alt="photo" class="light-shadow">
-            </div>
             <!-- main text -->
             <div class="about-text">
                 <p>I'm a Junior software developer with a desire to be a better version of myself everyday. I am looking for a job where I could extend my career and show my personality.</p>
@@ -161,7 +375,7 @@
     <!-- skills -->
     <section id="skills" class=" flex-col">
         <h3>Skills &amp; Tools</h3>
-        <p>Here is my set of weapons I use to make things happen. Not all are mentioned as I am learning something new every day and I am also an&nbsp;ex&#8209;developer in the engineering industry and . Proficiency ranges from excellent to absolutely awful.</p>
+        <p>Here is my set of weapons I use to make things happen. Not all are mentioned as I am learning something new every day and I am also an&nbsp;ex&#8209;developer in the engineering industry. Proficiency ranges from excellent to absolutely awful.</p>
 
         <!-- Rounded switch -->
         <label class="switch">

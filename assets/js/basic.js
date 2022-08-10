@@ -25,15 +25,24 @@ function closeMenu() {
 }
 
 // flip card
-const otherCard = document.querySelectorAll('.card');
 function flipCard(card) {
+
+  if (card.classList == 'card' || card.classList == 'card more') {
+    otherCards();
+    card.classList.add('is-flipped');
+  } else {
+    card.classList.remove('is-flipped');
+  }
+}
+
+// flip other opened cards
+const otherCard = document.querySelectorAll('.card');
+function otherCards() {
   otherCard.forEach((c) => {
-    if (c.classList == 'card is-flipped' || c.classList == 'card more is-flipped') {
+    if (c.classList == 'card is-flipped' || c.classList == 'card more is-flipped' || c.classList == 'card more is-flipped more-hide') {
       c.classList.remove('is-flipped')
     }
   });
-
-  card.classList.toggle('is-flipped');
 }
 
 // show more cards
