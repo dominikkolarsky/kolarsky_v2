@@ -323,8 +323,8 @@ h5 {
 }
 #welcome .grid {
   margin: 0 auto;
-  -webkit-animation: puff-in-hor 0.5s ease both;
-  animation: puff-in-hor 0.5s ease both;
+  -webkit-animation: puff-in-hor 1s linear both;
+  animation: puff-in-hor 1s linear both;
 }
 #welcome .grid .welcome-img {
   grid-column: span 12;
@@ -628,8 +628,8 @@ h5 {
   flex-wrap: wrap;
   gap: 16px;
   place-content: center;
-  -webkit-animation: puff-in-hor 0.4s ease both;
-  animation: puff-in-hor 0.4s ease both;
+  -webkit-animation: puff-in-hor 0.8s ease both;
+  animation: puff-in-hor 0.8s ease both;
 }
 #skills .tabcontent .item {
   width: 120px;
@@ -946,8 +946,8 @@ footer .love {
 }
 @-webkit-keyframes puff-in-hor {
   0% {
-    -webkit-transform: scaleX(2);
-    transform: scaleX(2);
+    -webkit-transform: scaleX(1.5);
+    transform: scaleX(1.5);
     -webkit-filter: blur(4px);
     filter: blur(4px);
     opacity: 0;
@@ -962,8 +962,8 @@ footer .love {
 }
 @keyframes puff-in-hor {
   0% {
-    -webkit-transform: scaleX(2);
-    transform: scaleX(2);
+    -webkit-transform: scaleX(1.5);
+    transform: scaleX(1.5);
     -webkit-filter: blur(4px);
     filter: blur(4px);
     opacity: 0;
