@@ -10,8 +10,6 @@ function openMenu() {
   hamburger.classList.toggle("active");
   navMenu.classList.toggle("active");
   header.classList.toggle("active");
-  header.style.backgroundColor = 'rgb(31, 32, 41)';
-
 }
 
 // Close menu on nav menu clicks
@@ -21,7 +19,7 @@ function closeMenu() {
   hamburger.classList.remove("active");
   navMenu.classList.remove("active");
   header.classList.remove("active");
-  header.style.backgroundColor = 'unset';
+  // header.style.backgroundColor = 'unset';
 }
 
 // flip card
@@ -60,7 +58,6 @@ function showMoreCards() {
   }
 }
 
-
 // swicher skills
 function switchTab() {
   const skillsCheck = document.querySelector('#skillsCheck');
@@ -84,13 +81,18 @@ const header = document.querySelector('#header');
 window.onscroll = function () { scrollFunction() };
 
 function scrollFunction() {
+
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
     mybutton.style.display = 'block';
-    header.style.backgroundColor = 'rgba(0,0,0, 0.1)';
+    header.classList.add("activeScroll");
+
   } else {
     mybutton.style.display = 'none';
-    header.style.backgroundColor = 'unset';
+    header.classList.remove("activeScroll");
+
   }
+
+
 }
 
 // When the user clicks on the button, scroll to the top of the document

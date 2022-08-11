@@ -179,7 +179,7 @@ a {
 }
 
 h1 {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: bolder;
 }
 
@@ -240,6 +240,9 @@ h5 {
   transition: var(--transition);
   backdrop-filter: blur(8px);
 }
+#header.activeScroll {
+  background: rgba(0, 0, 0, 0.1);
+}
 #header.active {
   background: var(--color-gray1);
   backdrop-filter: none;
@@ -255,6 +258,7 @@ h5 {
 #header #navbar h1 {
   white-space: nowrap;
   font-weight: bold;
+  text-shadow: 1px 1px 2px black;
 }
 #header #navbar ul {
   background: linear-gradient(to bottom, var(--color-gray1), var(--color-gray2));
@@ -276,13 +280,10 @@ h5 {
   padding: 1.5rem;
   font-size: 1.4rem;
   transition: 0.2s;
-}
-#header #navbar ul .nav-item .nav-link:hover {
-  color: var(--color-blue);
+  text-shadow: 1px 1px 2px black;
 }
 #header #navbar ul .nav-item .resume {
   color: rgba(255, 255, 255, 0.6);
-  text-shadow: 1px 1px 2px black;
 }
 #header #navbar ul.active {
   left: 0;
@@ -323,8 +324,8 @@ h5 {
 }
 #welcome .grid {
   margin: 0 auto;
-  -webkit-animation: puff-in-hor 1s linear both;
-  animation: puff-in-hor 1s linear both;
+  -webkit-animation: puff-in-hor 0.6s linear both;
+  animation: puff-in-hor 0.6s linear both;
 }
 #welcome .grid .welcome-img {
   grid-column: span 12;
@@ -340,8 +341,6 @@ h5 {
   grid-column: span 12;
   gap: 0.5rem;
   text-shadow: 0px 6px 11px rgba(0, 0, 0, 0.3);
-  -webkit-animation: scale-in-left 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-  animation: scale-in-left 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 #welcome .grid .welcome-text p {
   text-align: center;
@@ -628,8 +627,8 @@ h5 {
   flex-wrap: wrap;
   gap: 16px;
   place-content: center;
-  -webkit-animation: puff-in-hor 0.8s ease both;
-  animation: puff-in-hor 0.8s ease both;
+  -webkit-animation: jello-vertical 0.9s both;
+  animation: jello-vertical 0.9s both;
 }
 #skills .tabcontent .item {
   width: 120px;
@@ -646,6 +645,7 @@ h5 {
 #skills .tabcontent .item:hover {
   -webkit-animation: jello-horizontal 0.9s both;
   animation: jello-horizontal 0.9s both;
+  background-color: rgb(39, 40, 51);
 }
 #skills .tabcontent .item img {
   width: 50px;
@@ -796,10 +796,34 @@ footer .love {
   }
   #header #navbar ul .nav-item {
     margin: 0 1rem;
+    overflow: hidden;
   }
   #header #navbar ul .nav-item .nav-link {
     padding: 0rem;
     font-size: 1em;
+    position: relative;
+    display: block;
+    font-weight: 300;
+  }
+  #header #navbar ul .nav-item .nav-link span {
+    display: block;
+    transition: 0.6s;
+  }
+  #header #navbar ul .nav-item .nav-link:hover span {
+    transform: translateY(-100%);
+  }
+  #header #navbar ul .nav-item .nav-link:before {
+    color: var(--color-blue);
+    position: absolute;
+    content: attr(data-link-alt);
+    top: 100%;
+    left: 0;
+    opacity: 0%;
+    transition: 0.6s;
+  }
+  #header #navbar ul .nav-item .nav-link:hover:before {
+    top: 0;
+    opacity: 1;
   }
   #welcome {
     min-height: 60vh;
@@ -1050,6 +1074,66 @@ footer .love {
     transform: scale3d(1, 1, 1);
   }
 }
+@-webkit-keyframes jello-vertical {
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+  30% {
+    -webkit-transform: scale3d(0.75, 1.25, 1);
+    transform: scale3d(0.75, 1.25, 1);
+  }
+  40% {
+    -webkit-transform: scale3d(1.25, 0.75, 1);
+    transform: scale3d(1.25, 0.75, 1);
+  }
+  50% {
+    -webkit-transform: scale3d(0.85, 1.15, 1);
+    transform: scale3d(0.85, 1.15, 1);
+  }
+  65% {
+    -webkit-transform: scale3d(1.05, 0.95, 1);
+    transform: scale3d(1.05, 0.95, 1);
+  }
+  75% {
+    -webkit-transform: scale3d(0.95, 1.05, 1);
+    transform: scale3d(0.95, 1.05, 1);
+  }
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+@keyframes jello-vertical {
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+  30% {
+    -webkit-transform: scale3d(0.75, 1.25, 1);
+    transform: scale3d(0.75, 1.25, 1);
+  }
+  40% {
+    -webkit-transform: scale3d(1.25, 0.75, 1);
+    transform: scale3d(1.25, 0.75, 1);
+  }
+  50% {
+    -webkit-transform: scale3d(0.85, 1.15, 1);
+    transform: scale3d(0.85, 1.15, 1);
+  }
+  65% {
+    -webkit-transform: scale3d(1.05, 0.95, 1);
+    transform: scale3d(1.05, 0.95, 1);
+  }
+  75% {
+    -webkit-transform: scale3d(0.95, 1.05, 1);
+    transform: scale3d(0.95, 1.05, 1);
+  }
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
 @-webkit-keyframes scale-in-center {
   0% {
     -webkit-transform: scale(0);
@@ -1071,6 +1155,14 @@ footer .love {
   100% {
     -webkit-transform: scale(1);
     transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes fadeEffect {
+  from {
+    opacity: 0;
+  }
+  to {
     opacity: 1;
   }
 }
