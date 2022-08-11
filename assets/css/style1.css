@@ -605,6 +605,7 @@ h5 {
   -o-transition: var(--transition02);
   transition: var(--transition02);
   text-shadow: var(--shadow-lite);
+
 }
 #portfolio .projects .card .card__face--back .card-links a:hover {
   color: var(--color-blue);
@@ -613,9 +614,13 @@ h5 {
       -ms-transform: translateY(2px);
           transform: translateY(2px);
 }
-#portfolio .projects .card .card__face--back .card-links a i {
-  padding: 2px;
-  font-size: 25px;
+#portfolio .projects .card .card__face--back .card-links a svg {
+  height: 28px;
+  width: 28px;
+  -webkit-transform: translateY(5px);
+  -ms-transform: translateY(5px);
+      transform: translateY(5px);
+
 }
 #portfolio .projects .card.is-flipped {
   -webkit-transform: translateX(-100%) rotateY(-180deg);
