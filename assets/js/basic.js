@@ -52,10 +52,13 @@ showMoreBtn.addEventListener("click", showMoreCards);
 function showMoreCards() {
   moreCards.forEach((x) => x.classList.toggle("more-hide"));
   if (showMoreBtn.checked) {
-    showMore__text.innerHTML = "View less projects"
+    showMore__text.innerHTML = ""
   } else {
     showMore__text.innerHTML = "View more projects"
   }
+  $('html, body').scrollTop(
+    $this.next('div').offset().top - top
+);
 }
 
 // swicher skills

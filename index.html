@@ -215,7 +215,7 @@
                 </div>
             </li>
             <!-- Manage Landing Page -->
-            <li class="card" onclick="flipCard(this)">
+            <li id="lastCard" class="card" onclick="flipCard(this)">
                 <!-- predni strana -->
                 <div class="card__face">
                     <img loading="lazy" class="card-img" src="assets/img/css-manage.png" alt="Manage Landing Page">
@@ -433,7 +433,7 @@
         <!-- showMore projectu -->
         <label class="showMore">
             <input type="checkbox" id="moreCard-btn">
-            <span class="showMore__text"><span>View more projects</span></span>
+            <a class="showMore__text">View more projects</a>
         </label>
     </section>
 
