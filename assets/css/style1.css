@@ -277,6 +277,10 @@ h5 {
   -webkit-transition: var(--transition);
   -o-transition: var(--transition);
   transition: var(--transition);
+  
+  -webkit-animation: fadeEffect .6s linear both;
+  animation: fadeEffect .6s linear both;
+
   -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
 }
@@ -393,8 +397,8 @@ h5 {
 }
 #welcome .grid {
   margin: 0 auto;
-  -webkit-animation: fadeEffect 0.6s linear both;
-  animation: fadeEffect 0.6s linear both;
+  -webkit-animation: fadeEffect 1s linear both;
+  animation: fadeEffect 1s linear both;
 }
 #welcome .grid .welcome-img {
   -ms-grid-column-span: 12;
@@ -1032,8 +1036,6 @@ footer .love {
 
   #welcome .grid {
     margin: 0 auto;
-    /* -webkit-animation: puff-in-hor 0.6s linear both; */
-    /* animation: puff-in-hor 0.6s linear both; */
   }
   #welcome .grid .welcome-img {
     -ms-grid-column-span: 5;
