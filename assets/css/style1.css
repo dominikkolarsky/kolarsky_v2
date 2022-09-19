@@ -343,7 +343,7 @@ h5 {
   text-shadow: 1px 1px 2px black;
 }
 #header #navbar ul .nav-item .resume {
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--color-blue);
 }
 #header #navbar ul.active {
   left: 0;
