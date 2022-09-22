@@ -22,7 +22,11 @@ img {
 .containerKindle {
   margin-top: 8vh;
   position: relative;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
   height: fit-content;
   aspect-ratio: 500/717;
 }
@@ -122,6 +126,7 @@ img {
   top: 13%;
   left: 14%;
   display: grid;
+  grid-template-rows: -webkit-max-content 1fr;
   grid-template-rows: max-content 1fr;
 }
 .innerMain header {
@@ -224,4 +229,4 @@ img {
 .innerMain main .books hr {
   border-top: 1px solid rgba(0, 0, 0, 0.4);
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-}
+}/*# sourceMappingURL=app.css.map */
